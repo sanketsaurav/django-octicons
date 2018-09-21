@@ -19,7 +19,7 @@ Install the app in your project:
 
 INSTALLED_APPS = [
     # other apps
-    'octicons.apps.OcticonsConfig'
+    'octicons',
 ]
 ```
 
