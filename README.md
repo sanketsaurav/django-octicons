@@ -1,8 +1,11 @@
 # django-octicons
 
+[![PyPI](https://img.shields.io/pypi/v/django-octicons.svg)](https://pypi.org/project/django-octicons/)
 [![Build Status](https://travis-ci.org/sanketsaurav/django-octicons.svg?branch=master)](https://travis-ci.org/sanketsaurav/django-octicons)
+[![Python Versions](https://img.shields.io/pypi/pyversions/django-octicons.svg)](https://pypi.org/project/django-octicons/)
+[![License](https://img.shields.io/pypi/l/django-octicons.svg)](https://pypi.org/project/django-octicons/)
 
-Template tags for Django to use [GitHub Octicons](https://octicons.github.com/).
+Django template tags for using [GitHub Octicons](https://octicons.github.com/), with no other dependencies.
 
 ## Installation
 
