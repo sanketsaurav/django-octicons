@@ -70,6 +70,23 @@ def test_size_custom_height_width_passed():
     assert 'width="60"' in icon.to_svg
 
 
+def test_custom_scale_passed():
+    icon = Octicon('x', scale=2)
+    assert 'height="32"' in icon.to_svg
+    assert 'width="24"' in icon.to_svg
+
+
+def test_custom_height_width_scale_passed():
+    icon = Octicon('x', height=60, width=60, scale=2)
+    assert 'height="32"' in icon.to_svg
+    assert 'width="24"' in icon.to_svg
+
+    # if height and width are passed as strings
+    icon = Octicon('x', height="60", width="60", scale=0.5)
+    assert 'height="8"' in icon.to_svg
+    assert 'width="6"' in icon.to_svg
+
+
 def test_a11y_include_attributes():
     icon = Octicon('x', **{'aria-label': 'Close'})
     assert 'role="img"' in icon.to_svg

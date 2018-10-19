@@ -75,7 +75,8 @@ class Octicon(object):
         }
 
         # if a custom width or height is passed in
-        if self.options.get('width') or self.options.get('height'):
+        if ((self.options.get('width') or self.options.get('height')) and
+            'scale' not in self.options):
             if self.options.get('width'):
                 size['width'] = self.options.get('width')
             else:
@@ -85,6 +86,12 @@ class Octicon(object):
                 size['height'] = self.options.get('height')
             else:
                 size['height'] = self._calculate_height(self.options['width'])
+
+        # if a custom scale is provided
+        if self.options.get('scale'):
+            factor = self.options.get('scale')
+            size['width'] = int(int(size['width']) * factor)
+            size['height'] = int(int(size['height']) * factor)
 
         return size
 

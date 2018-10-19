@@ -43,19 +43,29 @@ And then, you can use the icons like this:
 </a>
 ```
 
-You can also pass any required attributes:
+You can also pass required height and width for the icon like this:
 
 ```html
 <a class="btn btn-sm" href="#url" role="button">
-  {% octicon "thumbsup" height="60" class="large" %}
+  {% octicon "thumbsup" height="60" width="60" class="large" %}
   Confirm Purchase
 </a>
 ```
 
+Or, you can scale the icon with respect to its default dimensions like this:
+
+```html
+<a class="btn btn-sm" href="#url" role="button">
+  {% octicon "thumbsup" scale=2 class="large" %}
+  Confirm Purchase
+</a>
+```
+
+
 All attributes passed will be added as HTML attributes to the SVG element
 of the icon.
 
-### Styling
+## Styling
 
 You should add the following in your styles:
 
