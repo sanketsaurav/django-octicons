@@ -41,9 +41,12 @@ matrix:
 install:
   - pip install tox
   - pip install tox-travis
-  - pip install coveralls
+  - pip install coverage
 
 script:
   - tox
 
-after_success: coveralls
+after_success:
+  - coverage xml
+  - curl https://deepsource.io/cli | sh
+  - ./bin/deepsource report --analyzer test-coverage --key python --value-file ./coverage.xml
