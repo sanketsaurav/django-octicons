@@ -75,8 +75,11 @@ class Octicon(object):
         }
 
         # if a custom width or height is passed in
-        if ((self.options.get('width') or self.options.get('height')) and
-            'scale' not in self.options):
+        if (
+                (self.options.get('width') or
+                 self.options.get('height')) and
+                'scale' not in self.options
+        ):
             if self.options.get('width'):
                 size['width'] = self.options.get('width')
             else:
@@ -104,5 +107,9 @@ class Octicon(object):
 
 @register.simple_tag
 def octicon(symbol, **options):
+    """
+    Example usage:
+        {% octicon "thumbsup" height="60" width="60" class="large" %}
+    """
     icon = Octicon(symbol, **options)
     return format_html(icon.to_svg)
